@@ -1,11 +1,7 @@
-
-import React from 'react';
-import Form from '../components/Form'; // Ensure correct path to Form component
+import Form from "../components/Form"
 
 function Register() {
-  return (
-    <Form route="api/user/register/" method="register" />
-  );
+    return <Form route="/api/user/register/" method="register" />
 }
 
-export default Register;
+export default Register
