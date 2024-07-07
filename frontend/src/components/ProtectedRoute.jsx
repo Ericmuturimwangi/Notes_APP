@@ -1,6 +1,6 @@
 //rep a wraper for protected route.
 import { Navigate } from "react-router-dom";
-import { JwtDecode, jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import api from "../api"
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
 import { useState, useEffect } from "react";
@@ -41,7 +41,7 @@ function ProtectedRoute({children}){ //this is to check if we are authorised bef
             setIsAuthorized(false)
             return
         } 
-        const decoded = jwtDecode(token) //auto decodes and gives the access to the value and the expiration date
+        const decoded = jwtDecode(token); //auto decodes and gives the access to the value and the expiration date
         const tokenExpiration = decoded.exp
         const now = Date.now() / 1000 //the essence of dividing by 1000 is to ensure that the date is displayed in seconds and not milliseconds
 
